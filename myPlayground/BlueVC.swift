@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  BlueVC.swift
 //  myPlayground
 //
 //  Created by Bahadir Kocaoglu on 26/01/2017.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
-
+class BlueVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +21,17 @@ class ViewController2: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func disableScrolling(_ sender: Any) {
+        
+        // fatal error: unexpectedly found nil while unwrapping an Optional value
+        let mainVC = ViewController();
+        mainVC.scrollView.isScrollEnabled = false;
+        
     }
-    */
-
+    
+    @IBAction func enableScrolling(_ sender: Any) {
+        
+    }
+    
 }

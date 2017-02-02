@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--VC1-->
+        <!--Red VC-->
         <scene sceneID="VMj-fk-bfO">
             <objects>
-                <viewController storyboardIdentifier="VC1" title="VC1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHl-KD-3mO" customClass="ViewController1" customModule="myPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RedVC" title="Red VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gHl-KD-3mO" customClass="RedVC" customModule="myPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WeU-I8-Wul"/>
                         <viewControllerLayoutGuide type="bottom" id="rLv-cM-bob"/>
@@ -20,17 +20,17 @@
                     <view key="view" contentMode="scaleToFill" id="IRV-0V-NgO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.64493650199999997" green="0.91510564090000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91826558110000001" green="0.0" blue="0.07757766545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPf-RZ-HDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="-602"/>
+            <point key="canvasLocation" x="-55" y="-585"/>
         </scene>
-        <!--VC2-->
+        <!--Blue VC-->
         <scene sceneID="Mhs-Yx-ziG">
             <objects>
-                <viewController storyboardIdentifier="VC2" title="VC2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="deL-26-4zQ" customClass="ViewController2" customModule="myPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlueVC" title="Blue VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="deL-26-4zQ" customClass="BlueVC" customModule="myPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tyc-qR-4CA"/>
                         <viewControllerLayoutGuide type="bottom" id="r1Z-T2-R1d"/>
@@ -38,12 +38,36 @@
                     <view key="view" contentMode="scaleToFill" id="hEP-Bq-gfb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.91826558110000001" green="0.0" blue="0.07757766545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9a-ga-qx9">
+                                <rect key="frame" x="77" y="313" width="220" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.71199544270000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Enable Scrolling">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="enableScrolling:" destination="deL-26-4zQ" eventType="touchUpInside" id="fQ4-un-MdE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KaN-dH-qe6">
+                                <rect key="frame" x="77" y="265" width="220" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Disable Scrolling">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disableScrolling:" destination="deL-26-4zQ" eventType="touchUpInside" id="thR-L9-YWf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.24418258670000001" green="0.77589106559999999" blue="0.94135445360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6e-bB-tMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-585"/>
+            <point key="canvasLocation" x="604" y="-585.1574212893554"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -57,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-cz-Vt4">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9V-jc-rcZ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
@@ -65,12 +89,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="myscr" destination="bKY-cz-Vt4" id="ztB-Vg-le5"/>
+                        <outlet property="scrollView" destination="h9V-jc-rcZ" id="In2-qf-i6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-714.39999999999998" y="-585.1574212893554"/>
         </scene>
     </scenes>
 </document>

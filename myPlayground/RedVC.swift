@@ -1,5 +1,5 @@
 //
-//  ViewController1.swift
+//  RedVC.swift
 //  myPlayground
 //
 //  Created by Bahadir Kocaoglu on 26/01/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController1: UIViewController {
+class RedVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

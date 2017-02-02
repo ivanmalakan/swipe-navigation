@@ -8,33 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var myscr: UIScrollView!
+class ViewController: UIViewController, UIScrollViewDelegate {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let VC1 = (self.storyboard?.instantiateViewController(withIdentifier: "VC1"))! as UIViewController;
-        self.addChildViewController(VC1);
-        self.myscr.addSubview(VC1.view);
-        VC1.didMove(toParentViewController: self);
-        VC1.view.frame = myscr.bounds;
+        let RedVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RedVC") as UIViewController;
         
-        let VC2 = (self.storyboard?.instantiateViewController(withIdentifier: "VC2"))! as UIViewController;
-        self.addChildViewController(VC2);
-        self.myscr.addSubview(VC2.view);
-        VC2.didMove(toParentViewController: self);
-        VC2.view.frame = myscr.bounds;
+        addChildViewController(RedVC);
+        scrollView.addSubview(RedVC.view);
+        RedVC.didMove(toParentViewController: self);
         
-        var VC2Frame: CGRect = VC2.view.frame;
-        VC2Frame.origin.x = self.view.frame.width;
-        VC2.view.frame = VC2Frame;
+        let BlueVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlueVC") as UIViewController;
         
-        self.myscr.contentSize = CGSize(width: (self.view.frame.width * 2), height: self.view.frame.height);
-        self.myscr.contentOffset = CGPoint(x: (self.view.frame.width * 2), y: self.view.frame.height);
+        var BlueVCFrame: CGRect = BlueVC.view.frame;
+        BlueVCFrame.origin.x = self.view.frame.size.width;
+        BlueVC.view.frame = BlueVCFrame;
         
+        addChildViewController(BlueVC);
+        scrollView.addSubview(BlueVC.view);
+        BlueVC.didMove(toParentViewController: self);
         
+        scrollView.contentSize = CGSize(width: self.view.frame.width * 2, height: self.view.frame.height);
+        
+        scrollView.delegate = self;
     }
 
     override func didReceiveMemoryWarning() {
