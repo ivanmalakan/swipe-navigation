@@ -15,13 +15,13 @@ class ViewController: UIViewController, UIScrollViewDelegate, BlueDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let RedViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RedVC") as! RedVC;
+        let RedViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RedVC") as! RedVC;
         
         addChildViewController(RedViewController);
         scrollView.addSubview(RedViewController.view);
         RedViewController.didMove(toParentViewController: self);
         
-        let BlueViewController = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "BlueVC") as! BlueVC;
+        let BlueViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlueVC") as! BlueVC;
         BlueViewController.delegate = self;
         
         var BlueViewControllerFrame: CGRect = BlueViewController.view.frame;
