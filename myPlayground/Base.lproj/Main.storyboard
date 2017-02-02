@@ -64,6 +64,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.24418258670000001" green="0.77589106559999999" blue="0.94135445360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="disableScrollingButton" destination="KaN-dH-qe6" id="dNR-E5-8rw"/>
+                        <outlet property="enableScrollingButton" destination="T9a-ga-qx9" id="o0q-T3-Mrc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6e-bB-tMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

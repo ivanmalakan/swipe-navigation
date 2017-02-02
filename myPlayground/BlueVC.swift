@@ -8,12 +8,22 @@
 
 import UIKit
 
+protocol BlueDelegate {
+    func stopScrolling();
+    func startScrolling();
+}
+
 class BlueVC: UIViewController {
+    
+    var delegate: BlueDelegate?;
+    
+    @IBOutlet weak var disableScrollingButton: UIButton!
+    @IBOutlet weak var enableScrollingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,15 +33,11 @@ class BlueVC: UIViewController {
     
     
     @IBAction func disableScrolling(_ sender: Any) {
-        
-        // fatal error: unexpectedly found nil while unwrapping an Optional value
-        let mainVC = ViewController();
-        mainVC.scrollView.isScrollEnabled = false;
-        
+        delegate?.stopScrolling();
     }
     
     @IBAction func enableScrolling(_ sender: Any) {
-        
+        delegate?.startScrolling();
     }
     
 }

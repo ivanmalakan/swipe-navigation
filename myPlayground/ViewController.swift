@@ -8,34 +8,46 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, BlueDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let RedVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RedVC") as UIViewController;
+        let RedViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RedVC") as! RedVC;
         
-        addChildViewController(RedVC);
-        scrollView.addSubview(RedVC.view);
-        RedVC.didMove(toParentViewController: self);
+        addChildViewController(RedViewController);
+        scrollView.addSubview(RedViewController.view);
+        RedViewController.didMove(toParentViewController: self);
         
-        let BlueVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BlueVC") as UIViewController;
+        let BlueViewController = UIStoryboard(name:"Main", bundle:nil).instantiateViewController(withIdentifier: "BlueVC") as! BlueVC;
+        BlueViewController.delegate = self;
         
-        var BlueVCFrame: CGRect = BlueVC.view.frame;
-        BlueVCFrame.origin.x = self.view.frame.size.width;
-        BlueVC.view.frame = BlueVCFrame;
+        var BlueViewControllerFrame: CGRect = BlueViewController.view.frame;
+        BlueViewControllerFrame.origin.x = self.view.frame.size.width;
+        BlueViewController.view.frame = BlueViewControllerFrame;
         
-        addChildViewController(BlueVC);
-        scrollView.addSubview(BlueVC.view);
-        BlueVC.didMove(toParentViewController: self);
+        addChildViewController(BlueViewController);
+        scrollView.addSubview(BlueViewController.view);
+        BlueViewController.didMove(toParentViewController: self);
         
         scrollView.contentSize = CGSize(width: self.view.frame.width * 2, height: self.view.frame.height);
         
         scrollView.delegate = self;
+        
     }
-
+    
+    func stopScrolling() {
+        scrollView.isScrollEnabled = false;
+        print("Disabled!");
+    }
+    
+    func startScrolling() {
+        scrollView.isScrollEnabled = true;
+        print("Enabled!");
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,4 +55,3 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 }
-
